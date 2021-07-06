@@ -13,8 +13,8 @@ public class GridBuildingSystem : MonoBehaviour
 	public Tilemap MainTilemap;
 	public Tilemap TempTilemap;
 
-	private Module _temp;
-	private Module[] _tempMainTilemaps;
+	private ModuleBuilding _temp;
+	private ModuleBuilding[] _tempMainTilemaps;
 	private int _counterTempMainTilemap = 0;
 
 	[SerializeField] private int _spaceshipArea = 10; 
@@ -26,7 +26,7 @@ public class GridBuildingSystem : MonoBehaviour
 	private void Awake()
 	{
 		Current = this;
-		_tempMainTilemaps = new Module[_spaceshipArea];
+		_tempMainTilemaps = new ModuleBuilding[_spaceshipArea];
 	}
 
 	private void Start()
@@ -80,7 +80,7 @@ public class GridBuildingSystem : MonoBehaviour
 
 		foreach (var gameObjectsModule in gameObjectsModules)
 		{
-			var componentBuilding = gameObjectsModule.GetComponent<Module>();
+			var componentBuilding = gameObjectsModule.GetComponent<ModuleBuilding>();
 
 			foreach (var v in componentBuilding.area.allPositionsWithin)
 			{
@@ -117,7 +117,7 @@ public class GridBuildingSystem : MonoBehaviour
 
 	public void InitializeWithBuilding(GameObject module)
 	{
-		_temp = Instantiate(module, Vector3.zero, Quaternion.identity).GetComponent<Module>();
+		_temp = Instantiate(module, Vector3.zero, Quaternion.identity).GetComponent<ModuleBuilding>();
 		FollowBuilding(_temp);
 	}
 
@@ -128,12 +128,12 @@ public class GridBuildingSystem : MonoBehaviour
 		TempTilemap.SetTilesBlock(prevArea, toClear);
 	}
 
-	public void FollowBuilding(Module module)
+	public void FollowBuilding(ModuleBuilding module)
 	{
 		_temp = module;
 		ClearArea(module.area);
 		PaintTempMainTilemap(TileType.Green);
-		_tempMainTilemaps = new Module[_spaceshipArea];
+		_tempMainTilemaps = new ModuleBuilding[_spaceshipArea];
 		_temp.area.position = GridLayout.WorldToCell(_temp.gameObject.transform.position);
 
 		BoundsInt buildingArea = _temp.area;

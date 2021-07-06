@@ -5,21 +5,14 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour
 {
-	[SerializeField] private GameObject _moduleCreat;
-
 	private GridBuildingSystem buildingSystem;
-	private Module _module;
+	private ModuleBuilding _module;
 	private Vector3 prevPos;
 
 	private void Start()
 	{
-		_module = GetComponent<Module>();
+		_module = GetComponent<ModuleBuilding>();
 		buildingSystem = GameObject.Find("Grid").GetComponent<GridBuildingSystem>();
-	}
-
-	private void OnMouseDown()
-	{
-		_module = Instantiate(_moduleCreat, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity).GetComponent<Module>();
 	}
 
 	private void OnMouseDrag()
