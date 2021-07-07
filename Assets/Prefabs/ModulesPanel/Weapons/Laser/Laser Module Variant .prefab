@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8768227705634989527}
   - component: {fileID: 5355513049963448291}
   - component: {fileID: 444159076502347671}
-  - component: {fileID: 7329517006151068458}
+  - component: {fileID: 5647532289110107891}
   m_Layer: 0
-  m_Name: Accessories Module Variant
+  m_Name: 'Laser Module Variant '
   m_TagString: Module
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f05f092dc32cc049aae6c215e5c1240, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7329517006151068458
+--- !u!114 &5647532289110107891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,13 +86,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7436467917739686565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d079c23f93df03444b85fde20acac1b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 35adfac14e1b9f34cb7298f1bb4794ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   area:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 1, y: 1, z: 1}
-  IconButton: {fileID: 21300000, guid: 68fa79efd04bc9e438dc104ce85ffb6b, type: 3}
+  IconButton: {fileID: 21300000, guid: a309d3fbe3d8f0c4590a4e5f6d61e680, type: 3}
 --- !u!1 &7462561070249183183
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c9dd7a4cfc11f44ea7cc3e7dfc33cd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 001e5720a624f894994bcb172965012e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
