@@ -1,13 +1,13 @@
-using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour
 {
-	private GridBuildingSystem buildingSystem;
-	private Module _module;
-	private Vector3 prevPos;
+	private GridBuildingSystem _buildingSystem;
+	private GameObject _currentSpaceship;	
+	private Vector3Int _prevPos;
 	private string _nameGrid;
+	private Module _module;
 
 	private void Start()
 	{
@@ -17,7 +17,11 @@ public class DragDrop : MonoBehaviour
 
 		_nameGrid = scrollViewMenu.ÑurrentSpaceship.name;
 
-		buildingSystem = GameObject.Find(_nameGrid).GetComponent<GridBuildingSystem>();
+		_currentSpaceship = GameObject.Find(_nameGrid);
+
+		gameObject.transform.SetParent(_currentSpaceship.transform);
+
+		_buildingSystem = _currentSpaceship.GetComponent<GridBuildingSystem>();
 	}
 
 	private void OnMouseDrag()
@@ -49,14 +53,14 @@ public class DragDrop : MonoBehaviour
 	{
 		Vector2 touchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-		Vector3Int cellPos = buildingSystem.GridLayout.LocalToCell(touchPos);
+		Vector3Int cellPos = _buildingSystem.GridLayout.LocalToCell(touchPos);
 
-		if (prevPos != cellPos)
+		if (_prevPos != cellPos)
 		{
-			_module.transform.localPosition = buildingSystem.GridLayout.CellToLocalInterpolated(cellPos);
+			_module.transform.localPosition = _buildingSystem.GridLayout.CellToLocalInterpolated(cellPos);
 
-			prevPos = cellPos;
-			buildingSystem.FollowBuilding(_module);
+			_prevPos = cellPos;
+			_buildingSystem.FollowBuilding(_module);
 		}
 	}
 }

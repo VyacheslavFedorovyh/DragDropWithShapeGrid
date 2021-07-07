@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Spaceship 1
   m_EditorClassIdentifier: 
   SpriteSpaceship: {fileID: 21300000, guid: 0caa108de217ca841b22a27cc46c9991, type: 3}
-  GridModuls: {fileID: 3730932660806834050, guid: 6f9e678d94e678149bdc89fa6838081f, type: 3}
+  GridModuls: {fileID: 3730932660806834050, guid: 65ce8af03007bc44a98c33605a006c7f, type: 3}
   QuantityModuls: 24

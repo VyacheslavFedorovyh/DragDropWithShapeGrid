@@ -14,7 +14,7 @@ public class ContentSpaceships : MonoBehaviour
 		{
 			GameObject button = Instantiate(_button, gameObject.transform);
 			button.GetComponent<Image>().sprite = _spaceships[i].SpriteSpaceship;
-			button.GetComponent<ButtonClick>().Spaceship = _spaceships[i];
+			button.GetComponent<SelectingSpaceship>().Spaceship = _spaceships[i];
 		}
 	}
 }

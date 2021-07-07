@@ -13,7 +13,7 @@ public class ContentModules: MonoBehaviour
 		{
 			GameObject button = Instantiate(_button, gameObject.transform);
 			button.GetComponent<Image>().sprite = _moduls[i].IconButton;
-			button.GetComponent<ButtonClickModule>().module = _moduls[i];
+			button.GetComponent<ButtonClickModule>().Module = _moduls[i];
 		}
 	}
 }

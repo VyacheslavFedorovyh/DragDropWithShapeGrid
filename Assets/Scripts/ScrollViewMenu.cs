@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class ScrollViewMenu : MonoBehaviour
 {
-	public List<GameObject> ListCreatedSpaceships;
+	public Dictionary<Spaceships, GameObject> ListCreatedSpaceships = new Dictionary<Spaceships, GameObject>();
+
 	public GameObject ÑurrentSpaceship;
 
 	public void OpenPanel(GameObject panel)
@@ -26,4 +27,4 @@ public class ScrollViewMenu : MonoBehaviour
 		ÑurrentSpaceship.SetActive(false);
 	}
 }
-	
+

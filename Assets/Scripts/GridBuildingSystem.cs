@@ -16,7 +16,6 @@ public class GridBuildingSystem : MonoBehaviour
 	private Module[] _tempMainTilemaps;
 	private int _counterTempMainTilemap = 0;
 
-
 	private static Dictionary<TileType, TileBase> _tileBases = new Dictionary<TileType, TileBase>();
 
 	#region Unity Methods
@@ -29,12 +28,15 @@ public class GridBuildingSystem : MonoBehaviour
 
 	private void Start()
 	{
-		string tilePath = @"Tiles\";
+		if (!_tileBases.Any())
+		{
+			string tilePath = @"Tiles\";
 
-		_tileBases.Add(TileType.Empty, null);
-		_tileBases.Add(TileType.White, Resources.Load<TileBase>(tilePath + "white"));
-		_tileBases.Add(TileType.Green, Resources.Load<TileBase>(tilePath + "green"));
-		_tileBases.Add(TileType.Red, Resources.Load<TileBase>(tilePath + "red"));
+			_tileBases.Add(TileType.Empty, null);
+			_tileBases.Add(TileType.White, Resources.Load<TileBase>(tilePath + "white"));
+			_tileBases.Add(TileType.Green, Resources.Load<TileBase>(tilePath + "green"));
+			_tileBases.Add(TileType.Red, Resources.Load<TileBase>(tilePath + "red"));
+		}
 	}
 
 	#endregion
