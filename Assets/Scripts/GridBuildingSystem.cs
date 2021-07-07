@@ -188,6 +188,18 @@ public class GridBuildingSystem : MonoBehaviour
 		return true;
 	}
 
+	public bool TakeAreaEmpty(BoundsInt area)
+	{
+		TileBase[] baseArray = GetTilesBlock(area, MainTilemap);
+
+		if (baseArray.Any(d => d == _tileBases[TileType.White]))
+		{			
+			return true;
+		}		
+
+		return false;
+	}
+
 	public void PaintArea(BoundsInt area)
 	{
 		SetTilesBlock(area, TileType.Empty, TempTilemap);
