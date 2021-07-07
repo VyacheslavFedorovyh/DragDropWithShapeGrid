@@ -3476,6 +3476,9 @@ MonoBehaviour:
   _spaceships:
   - {fileID: 11400000, guid: 640cf50afe28d1547a5a466a7d77b508, type: 2}
   - {fileID: 11400000, guid: 58f96ff4f62e2674d9c8d9e9a018aafb, type: 2}
+  - {fileID: 11400000, guid: a3e48ac5fe42b004b8a8ceff85a5a21a, type: 2}
+  - {fileID: 11400000, guid: daaf9f8f7ae4c77458ce3ef367636a33, type: 2}
+  - {fileID: 11400000, guid: fc5a81b99750f5a4899224b720734c80, type: 2}
 --- !u!1 &1155849614
 GameObject:
   m_ObjectHideFlags: 0

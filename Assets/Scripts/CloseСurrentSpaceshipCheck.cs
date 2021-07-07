@@ -15,9 +15,9 @@ public class CloseСurrentSpaceshipCheck : MonoBehaviour
 
 		GridBuildingSystem gridBuildingSystem = scrollViewMenu.СurrentSpaceship.GetComponent<GridBuildingSystem>();
 
-		bool check = gridBuildingSystem.TakeAreaEmpty(_area);
+		_check = gridBuildingSystem.TakeAreaEmpty(_area);
 
-		if (check)
+		if (_check)
 			panel.SetActive(true);
 		else
 		{

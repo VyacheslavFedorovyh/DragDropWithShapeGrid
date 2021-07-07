@@ -6,9 +6,24 @@ using UnityEngine.UI;
 public class SelectingSpaceship : MonoBehaviour
 {
 	public Spaceships Spaceship;
+	private bool switcher = true;
+	private Button exitCustomizationCheck;
+
+	private void Start()
+	{
+		if (switcher)
+		{
+			exitCustomizationCheck = GameObject.Find("Customization Button").GetComponent<Button>();
+			exitCustomizationCheck.enabled = false;
+			switcher = false;
+		}
+	}
 
 	public void AddSpaceship()
 	{
+		if (!switcher)
+			exitCustomizationCheck.enabled = true;
+
 		ScrollViewMenu scrollViewMenu = GameObject.Find("CanvasEditor").GetComponent<ScrollViewMenu>();
 
 		Dictionary<Spaceships, GameObject> listSpaceships = scrollViewMenu.ListCreatedSpaceships;

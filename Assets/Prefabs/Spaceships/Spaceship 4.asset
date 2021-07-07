@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748cdf2e1a883e94aa4d7a5494b75229, type: 3}
+  m_Name: Spaceship 4
+  m_EditorClassIdentifier: 
+  SpriteSpaceship: {fileID: 21300000, guid: 215530029c5e34d4a89ae74556169beb, type: 3}
+  GridModuls: {fileID: 3730932660806834050, guid: 297709d983c29ad4cbb53b7d80d959a4, type: 3}
+  QuantityModuls: 28
