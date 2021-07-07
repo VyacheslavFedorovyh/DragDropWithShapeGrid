@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour
 {
 	private GridBuildingSystem buildingSystem;
-	private ModuleBuilding _module;
+	private Module _module;
 	private Vector3 prevPos;
+	private string _nameGrid;
 
 	private void Start()
 	{
-		_module = GetComponent<ModuleBuilding>();
-		buildingSystem = GameObject.Find("Grid").GetComponent<GridBuildingSystem>();
+		_module = GetComponent<Module>();
+
+		ScrollViewMenu scrollViewMenu = GameObject.Find("CanvasEditor").GetComponent<ScrollViewMenu>();
+
+		_nameGrid = scrollViewMenu.ÑurrentSpaceship.name;
+
+		buildingSystem = GameObject.Find(_nameGrid).GetComponent<GridBuildingSystem>();
 	}
 
 	private void OnMouseDrag()
@@ -20,7 +25,13 @@ public class DragDrop : MonoBehaviour
 		if (EventSystem.current.IsPointerOverGameObject(0))
 			return;
 
-		if (_module.Placed)
+		if (_module.Placed == null)
+		{
+			FollowMouse();
+			return;
+		}
+
+		if (_module.Placed == true)
 			FollowMouse();
 		else
 		{
