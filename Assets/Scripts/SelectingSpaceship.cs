@@ -6,23 +6,23 @@ using UnityEngine.UI;
 public class SelectingSpaceship : MonoBehaviour
 {
 	public Spaceships Spaceship;
-	private bool switcher = true;
-	private Button exitCustomizationCheck;
+	private bool _switcher = true;
+	private Button _exitCustomizationCheck;
 
 	private void Start()
 	{
-		if (switcher)
+		if (_switcher)
 		{
-			exitCustomizationCheck = GameObject.Find("Customization Button").GetComponent<Button>();
-			exitCustomizationCheck.enabled = false;
-			switcher = false;
+			_exitCustomizationCheck = GameObject.Find("Customization Button").GetComponent<Button>();
+			_exitCustomizationCheck.enabled = false;
+			_switcher = false;
 		}
 	}
 
 	public void AddSpaceship()
 	{
-		if (!switcher)
-			exitCustomizationCheck.enabled = true;
+		if (!_switcher)
+			_exitCustomizationCheck.enabled = true;
 
 		ScrollViewMenu scrollViewMenu = GameObject.Find("CanvasEditor").GetComponent<ScrollViewMenu>();
 
