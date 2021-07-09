@@ -9,3 +9,5 @@ A prototype project with some logic:
 After clicking the button to complete the build:
 - Display a message if there are empty cells
 - Go to the initial screen with saving the assembly. Saving is implemented within the session.
+
+![Drag'n drop With any Shape Grid](https://user-images.githubusercontent.com/40936755/125074842-1a9f7d00-e0be-11eb-9e08-6f104b0105d6.gif)
